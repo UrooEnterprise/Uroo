@@ -1,14 +1,16 @@
 const appContainer = document.getElementById('app-container');
 const searchInput = document.getElementById('searchInput');
 
-// ⚠️ Replace with your WhatsApp number including country code (e.g. 919876543210)
+// Business Contact Details
 const WHATSAPP_NUMBER = "919016406623"; 
+const INSTAGRAM_URL = "https://www.instagram.com/urooenterprise/";
+const FACEBOOK_URL = "https://www.facebook.com/people/Uroo-Enterprise/61577735529706/";
+const SUPPORT_EMAIL = "UrooEnterprise@gmail.com";
 
 const categories = [
     { id: 'zodiac', name: 'Zodiac / Rashi Bracelets', image: 'https://images.unsplash.com/photo-1611591475583-8a3bc2e93542?w=400' },
     { id: 'bracelets', name: 'Crystal Bracelets', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400' },
-    { id: 'vastu', name: 'Pyrite & Vastu Items', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400' },
-    { id: 'pendants', name: 'Spiritual Pendants & Malas', image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400' },
+    { id: 'vastu', name: 'Spiritual / Vastu Items', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400' },
     { id: 'jewellery', name: 'Imitation Jewellery', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400' }
 ];
 
@@ -31,21 +33,6 @@ const products = [
     },
     {
         id: 2,
-        category: 'zodiac',
-        name: 'Taurus (Vrishabha) Zodiac Bracelet – Rose Quartz & Green Aventurine',
-        price: 299,
-        originalPrice: 699,
-        customizable: true,
-        images: [
-            'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600'
-        ],
-        description: 'Tailored for Taurus (Vrishabha Rashi). Rose Quartz promotes unconditional love and Green Aventurine attracts wealth and prosperity.',
-        meeshoLink: 'https://meesho.com',
-        amazonLink: 'https://amazon.in',
-        whatsappMessage: 'Hello Uroo Enterprise, I want to buy Taurus Vrishabha Zodiac Bracelet.'
-    },
-    {
-        id: 3,
         category: 'bracelets',
         name: 'Original Citrine Abundance & Wealth Bracelet',
         price: 349,
@@ -60,37 +47,22 @@ const products = [
         whatsappMessage: 'Hello Uroo Enterprise, I want to buy Citrine Abundance Bracelet.'
     },
     {
-        id: 4,
+        id: 3,
         category: 'vastu',
-        name: 'Pyrite 7 Horse Vastu Frame for Success & Wealth',
+        name: 'Pyrite 7 Horse Vastu Frame & Tortoise Set',
         price: 599,
         originalPrice: 1299,
         customizable: false,
         images: [
             'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600'
         ],
-        description: 'Powerful Vastu remedy featuring running horses combined with original Pyrite stones to accelerate career progress and financial flow.',
+        description: 'Powerful Vastu remedy featuring running horses and original Pyrite stones to accelerate career progress, wealth flow, and positive energy.',
         meeshoLink: 'https://meesho.com',
         amazonLink: 'https://amazon.in',
-        whatsappMessage: 'Hello Uroo Enterprise, I want to buy Pyrite 7 Horse Frame.'
+        whatsappMessage: 'Hello Uroo Enterprise, I want to buy Pyrite Vastu Frame.'
     },
     {
-        id: 5,
-        category: 'pendants',
-        name: 'Original Machh Mani Pendant for Wealth & Protection',
-        price: 399,
-        originalPrice: 899,
-        customizable: false,
-        images: [
-            'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600'
-        ],
-        description: 'Traditional spiritual pendant revered for bringing sudden financial gains, shielding against negative energies, and granting prosperity.',
-        meeshoLink: 'https://meesho.com',
-        amazonLink: 'https://amazon.in',
-        whatsappMessage: 'Hello Uroo Enterprise, I want to buy Machh Mani Pendant.'
-    },
-    {
-        id: 6,
+        id: 4,
         category: 'jewellery',
         name: 'Evil Eye Heart Pendant with Golden Chain',
         price: 249,
@@ -99,7 +71,7 @@ const products = [
         images: [
             'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600'
         ],
-        description: 'Stylish heart-shaped evil eye pendant on a durable golden finish chain, combining fashionable daily wear with protective symbolism.',
+        description: 'Stylish heart-shaped evil eye pendant on a durable golden finish chain, combining daily fashion with powerful protective symbolism.',
         meeshoLink: 'https://meesho.com',
         amazonLink: 'https://amazon.in',
         whatsappMessage: 'Hello Uroo Enterprise, I want to buy Evil Eye Heart Pendant.'
@@ -110,8 +82,10 @@ function showHome() {
     let html = `
         <div class="home-banner">
             <h2>Uroo Enterprise</h2>
-            <p>Shop Certified Crystals, Vastu & Spiritual Items</p>
+            <p>Certified Crystals, Vastu & Spiritual Collection</p>
+            <div class="banner-marketplace-tag">🛒 Officially available on Meesho & Amazon</div>
         </div>
+
         <div class="section-title">Explore Categories</div>
         <div class="category-grid">
     `;
@@ -127,11 +101,31 @@ function showHome() {
 
     html += `</div><div class="section-title">Featured Collections</div><div class="product-grid">`;
 
-    products.slice(0, 6).forEach(p => {
+    products.slice(0, 4).forEach(p => {
         html += createProductCardHTML(p);
     });
 
     html += `</div>`;
+
+    // About Us & Trust Section
+    html += `
+        <div class="about-section">
+            <h3>About Uroo Enterprise</h3>
+            <p>Welcome to Uroo Enterprise! We specialize in premium quality natural crystal bracelets, zodiac rashi items, authentic Vastu remedies, and spiritual accessories. Every piece is carefully curated and energized to bring positivity, protection, and prosperity into your life.</p>
+            <p style="margin-top: 10px;">🛍️ <strong>Trusted Marketplace Seller:</strong> You can shop with 100% confidence from us directly here or find our official storefronts on <strong>Meesho</strong> and <strong>Amazon</strong>.</p>
+            
+            <div class="social-connect-box">
+                <p>Connect With Us:</p>
+                <div class="social-icons-row">
+                    <a href="${INSTAGRAM_URL}" target="_blank" class="social-btn insta"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="${FACEBOOK_URL}" target="_blank" class="social-btn fb"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Uroo%20Enterprise" target="_blank" class="social-btn wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <p class="email-text"><i class="fa-solid fa-envelope"></i> ${SUPPORT_EMAIL}</p>
+            </div>
+        </div>
+    `;
+
     appContainer.innerHTML = html;
     window.scrollTo(0, 0);
 }
@@ -146,7 +140,7 @@ function showCategory(catId) {
     `;
 
     if(catProducts.length === 0) {
-        html += `<p style="padding:16px; font-size:13px;">No products added in this category yet.</p>`;
+        html += `<p style="padding:16px; font-size:13px;">No products added in this category yet. Check back soon or chat on WhatsApp!</p>`;
     } else {
         catProducts.forEach(p => {
             html += createProductCardHTML(p);
