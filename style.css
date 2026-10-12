@@ -96,12 +96,22 @@ body {
 
 .home-banner h2 {
     font-size: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .home-banner p {
     font-size: 12px;
     opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.banner-marketplace-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .section-title {
@@ -213,6 +223,72 @@ body {
     margin-left: 6px;
 }
 
+/* About Us Section */
+.about-section {
+    background: white;
+    margin: 20px 16px;
+    padding: 20px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.about-section h3 {
+    font-size: 16px;
+    color: #4a154b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.about-section p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.social-connect-box {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.social-connect-box p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.social-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-btn.insta { background: #e1306c; }
+.social-btn.fb { background: #1877f2; }
+.social-btn.wa { background: #25d366; }
+
+.email-text {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
+}
+
+/* Product Detail View */
 .detail-container {
     background: white;
     padding-bottom: 90px;
