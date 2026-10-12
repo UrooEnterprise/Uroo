@@ -12,6 +12,42 @@ body {
     padding-bottom: 60px;
 }
 
+/* Language Bar for 5 languages */
+.language-bar {
+    background: #222;
+    color: white;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.language-bar span {
+    opacity: 0.8;
+    margin-right: 2px;
+}
+
+.lang-btn {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid #555;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.lang-btn.active {
+    background: #4a154b;
+    color: white;
+    border-color: #4a154b;
+    font-weight: 600;
+}
+
 .disclaimer-ticker {
     background: #fff3cd;
     color: #856404;
